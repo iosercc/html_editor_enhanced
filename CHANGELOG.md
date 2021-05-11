@@ -1,0 +1,53 @@
+## [1.3.0] - 2021-02-23
+* Add official support for Flutter Web
+* Add support for modifying the toolbar options. See the README for details on the API.
+* Add support for a native dark mode
+* Removed image_picker plugin and image button in toolbar because users can insert images via the image button in Summernote
+    * [BREAKING] Removed the `imageWidth` and `useBottomSheet` params due to the above change
+
+## [1.2.0+1] - 2021-02-20
+* Add support for accessing `InAppWebViewController` via a getter
+* Add support for inserting files via the editor dialog itself
+* Add methods:
+   * toggle code view
+   * enable/disable editor
+   * undo/redo
+   * inserting plaintext/HTML/images/links
+* Add callbacks:
+   * onChange
+   * onEnter
+   * onFocus/onBlur/onBlurCodeview
+   * onKeyUp/onKeyDown
+   * onPaste
+* Downgraded dependencies to non-nullsafety to prevent errors
+* Updated docs and example app to showcase new features, refer to those for info on the above changes
+
+## [1.1.1] - 2021-02-19
+* Minor update to add documentation to code and completely refactor/reorganize code
+
+## [1.1.0] - 2021-02-19
+* Switch webview dependency to `flutter_inappwebview`
+* Remove localserver, instead get Summernote HTML directly from assets (improves performance and loading speeds)
+* [BREAKING] Switch to `StatelessWidget`
+   * You no longer need a `GlobalKey` for the `HtmlEditorState`. All of the methods are static and can be called like so:
+   ```dart
+   HtmlEditor.setEmpty(); 
+   ```
+* Fix deprecations and update dependencies
+
+## Flutter HTML Editor changes by xrb21
+## [1.0.1] - 2020-05-07
+* Update Readme usage for iOS
+
+## [1.0.0] - 2020-05-07
+* fixing iOS blank screen
+* fixing text hint
+
+## [0.0.2+1] - 2020-05-02
+* fixing path packages
+
+## [0.0.2] - 2020-05-02
+* Change link repo
+
+## [0.0.1] - 2020-05-02
+* Initial Release

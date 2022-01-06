@@ -46,7 +46,6 @@ class HtmlEditorWidget extends StatelessWidget {
             initialOptions: InAppWebViewGroupOptions(
               crossPlatform: InAppWebViewOptions(
                 javaScriptEnabled: true,
-                debuggingEnabled: true,
                 transparentBackground: true
               ),
               //todo flutter_inappwebview 5.0.0
@@ -68,8 +67,8 @@ class HtmlEditorWidget extends StatelessWidget {
               }
               text = message;
             },
-            onLoadStop: (InAppWebViewController controller, String url) async {
-              if (url.contains("summernote.html")) {
+            onLoadStop: (InAppWebViewController controller, Uri url) async {
+              if (url.toString().contains("summernote.html")) {
                 String summernoteToolbar = "[\n";
                 for (Toolbar t in toolbar) {
                   summernoteToolbar = summernoteToolbar +
